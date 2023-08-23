@@ -42,7 +42,7 @@
             @endforeach
             </tbody>
           </table>
-    
+          {{-- {{$leaves_requests->links()}} --}}
     </div>
   
 </body>

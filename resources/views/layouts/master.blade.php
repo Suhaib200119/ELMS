@@ -5,11 +5,15 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }} 
             ||
-            <a href="{{ route("leaves.index") }}">Leaves</a>
+            <a href="{{ route("leaves.index") }}">{{__("Leaves")}}</a>
             ||
-            <a href="{{ route("users.index") }}">employees</a>
+            <a href="{{ route("users.index") }}">{{__("employees")}}</a>
             ||
-            <a href="{{ route("indexRequest_admin") }}">request</a>
+            <a href="{{ route("indexRequest_admin") }}">{{__("request")}}</a>
+            ||
+            <a href="{{route("changeLang",["lang"=>"ar"])}}">عربي</a>
+            ||
+            <a href="{{route("changeLang",["lang"=>"en"])}}">انجليزي</a>
         </h2>
     </x-slot>
 

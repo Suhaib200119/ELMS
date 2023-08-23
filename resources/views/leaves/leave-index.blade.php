@@ -15,9 +15,9 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">leave name</th>
-                <th scope="col">leave description</th>
-                <th scope="col">operations</th>
+                <th scope="col">{{__("leave name")}}</th>
+                <th scope="col">{{__("leave description")}}</th>
+                <th scope="col">{{__("operations")}}</th>
             </tr>
         </thead>
         <tbody>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LangController;
 use App\Http\Controllers\LeaveController;
 use App\Http\Controllers\LeaveRequestResponseController;
 use App\Http\Controllers\ProfileController;
@@ -39,7 +40,7 @@ Route::get('/dashboard', function () {
     }
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth',"applayChangeLang")->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -51,7 +52,9 @@ Route::middleware('auth')->group(function () {
     Route::get("/leavesRequests/create",[LeaveRequestResponseController::class,"createRequest_user"])->name("createRequest_user");
     Route::post("/leavesRequests/store",[LeaveRequestResponseController::class,"storeRequest_user"])->name("storeRequest_user");
     Route::get("/leavesRequests/admin",[LeaveRequestResponseController::class,"indexRequest_admin"])->name("indexRequest_admin");
-    Route::put("leavesRequests/{id}/response",[LeaveRequestResponseController::class,"responseOnRequest"])->name("responseOnRequest");
+    Route::put("/leavesRequests/{id}/response",[LeaveRequestResponseController::class,"responseOnRequest"])->name("responseOnRequest");
+
+    Route::get("/lang/changeLang",[LangController::class,"changeController"])->name("changeLang");
 });
 
 require __DIR__.'/auth.php';
