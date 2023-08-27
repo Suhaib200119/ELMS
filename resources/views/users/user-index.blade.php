@@ -38,6 +38,7 @@
                                 <button type="submit" class="btn btn-danger" style="background:#d62828"><i
                                     class="bi bi-trash"></i></button>
                                 </form>
+                                <a class="btn btn-secondary" href="{{ route('roles_users.create',["user_id"=>$employee->id]) }}">Add Role</a>
                     </td>
                 </tr>
             @endforeach

@@ -5,5 +5,8 @@
     "request":"الطلبات",
     "leave name":"اسم الاجازة",
     "leave description":"وصف الاجازة",
-    "operations":"العمليات"
+    "operations":"العمليات",
+    "arabic":"عربي",
+    "english":"إنجليزي"
+
 }

@@ -8,6 +8,7 @@
         <div class="navbar-nav">
           <a class="nav-link active"  href="{{ route("indexRequest_user") }}">my request</a>
           <a class="nav-link active" href="{{route("createRequest_user")}}">add request</a>
+          <a class="nav-link active" href="{{route("roles_users.getRoles")}}">my roles</a>
           <form action="{{ route("logout") }}" method="post">
             @csrf
           <button type="submit" class="btn btn-danger">logout</button>

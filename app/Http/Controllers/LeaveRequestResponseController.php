@@ -48,6 +48,7 @@ class LeaveRequestResponseController extends Controller
 
     public function indexRequest_admin()
     {
+        // $this->authorize("viewRequests",[Leave_Request_Response::class]);
         return view("requests.index", [
             "leaves_requests" => Leave_Request_Response::where("status","=","waiting")->paginate(3),
         ]);

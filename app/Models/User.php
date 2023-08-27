@@ -50,4 +50,8 @@ class User extends Authenticatable
     public function leaves_requests(){
         return $this->hasMany(Leave_Request_Response::class)->latest();
     }
+ 
+    public function roles(){
+        return $this->belongsToMany(Role::class,"role_users","user_id","role_id")->withPivot(["role_id"]);
+    }
 }

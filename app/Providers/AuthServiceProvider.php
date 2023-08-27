@@ -3,6 +3,12 @@
 namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
+
+use App\Http\Requests\LeaveRequestFromUserRequest;
+use App\Models\Leave_Request_Response;
+use App\Policies\ApproveRequest;
+use App\Policies\ApproveRequestPolicy;
+use App\Policies\Leave_Request_Resonse_Policy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -13,7 +19,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        //
+        Leave_Request_Response::class=>Leave_Request_Resonse_Policy::class
     ];
 
     /**

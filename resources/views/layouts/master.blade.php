@@ -10,10 +10,10 @@
             <a href="{{ route("users.index") }}">{{__("employees")}}</a>
             ||
             <a href="{{ route("indexRequest_admin") }}">{{__("request")}}</a>
+            || 
+            <a href="{{route("changeLang",["lang"=>"ar"])}}">{{__("arabic")}}</a>
             ||
-            <a href="{{route("changeLang",["lang"=>"ar"])}}">عربي</a>
-            ||
-            <a href="{{route("changeLang",["lang"=>"en"])}}">انجليزي</a>
+            <a href="{{route("changeLang",["lang"=>"en"])}}">{{__("english")}}</a>
         </h2>
     </x-slot>
 

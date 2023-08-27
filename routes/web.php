@@ -4,9 +4,12 @@ use App\Http\Controllers\LangController;
 use App\Http\Controllers\LeaveController;
 use App\Http\Controllers\LeaveRequestResponseController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\RoleUserController;
 use App\Http\Controllers\UserController;
 use App\Models\Leave;
 use App\Models\Leave_Request_Response;
+use App\Models\RoleUser;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -53,8 +56,13 @@ Route::middleware('auth',"applayChangeLang")->group(function () {
     Route::post("/leavesRequests/store",[LeaveRequestResponseController::class,"storeRequest_user"])->name("storeRequest_user");
     Route::get("/leavesRequests/admin",[LeaveRequestResponseController::class,"indexRequest_admin"])->name("indexRequest_admin");
     Route::put("/leavesRequests/{id}/response",[LeaveRequestResponseController::class,"responseOnRequest"])->name("responseOnRequest");
-
     Route::get("/lang/changeLang",[LangController::class,"changeController"])->name("changeLang");
+
+    Route::get("/roles_users/{user_id}",[RoleUserController::class,"create"])->name("roles_users.create");
+    Route::post("/roles_users",[RoleUserController::class,"store"])->name("roles_users.store");
+    Route::get("/roles_users",[RoleUserController::class,"getRoles"])->name("roles_users.getRoles");
+
+
 });
 
 require __DIR__.'/auth.php';
