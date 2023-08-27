@@ -6,7 +6,6 @@
 
       <form action="{{route("roles_users.store")}}" method="post">
             @csrf
-          
             @foreach ($roles as $role)
                   {{$role->role_name}} <input type="checkbox" value="{{$role->id}}" name="roles[]" 
                   @checked(in_array($role->id,$user_roles)) >
